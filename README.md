@@ -1,5 +1,7 @@
 # Daily-PS
 15조가 십오조 알고리즘 공부 - 1 일 1 알고리즘 도전하자 😎
+![initial](https://github.com/user-attachments/assets/3e5d4b04-6bda-4ad0-b87b-4db5f70d577d)
+
 > Since 2024.08.14
 - 참고 사이트: [백준](https://www.acmicpc.net/), [프로그래머스](https://programmers.co.kr/)
 - 언어: 파이썬
