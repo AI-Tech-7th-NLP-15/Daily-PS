@@ -1,0 +1,42 @@
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    static StringTokenizer st;
+    static StringBuilder sb;
+
+    public static void main(String[] args) throws IOException {
+        n = Integer.parseInt(br.readLine());
+        int[] a = new int[n];
+        int[] b = new int[n];
+
+        PriorityQueue<Integer> pq = new PriorityQueue<>((l, k) ->{
+            return l - k;
+        });
+        PriorityQueue<Integer> pq2 = new PriorityQueue<>((l, k) -> {
+            return k - l;
+        });
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < n; i++) {
+            a[i] = Integer.parseInt(st.nextToken());
+            pq.offer(a[i]);
+        }
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < n; i++) {
+            b[i] = Integer.parseInt(st.nextToken());
+            pq2.offer(b[i]);
+        }
+
+        int ans = 0;
+        for (int i = 0; i < n; i++) {
+            ans += pq.poll() * pq2.poll();
+        }
+        sb = new StringBuilder();
+        sb.append(ans);
+        bw.write(sb.toString());
+        bw.close();
+        br.close();
+    }
+}
