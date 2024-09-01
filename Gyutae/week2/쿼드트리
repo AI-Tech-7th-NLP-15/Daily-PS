@@ -1,0 +1,53 @@
+https://www.acmicpc.net/problem/1992
+
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    static StringTokenizer st;
+    static int n, m;
+    static StringBuilder sb;
+
+    public static void main(String[] args) throws IOException {
+        n = Integer.parseInt(br.readLine());
+        int[][] arr = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            String str = br.readLine();
+            for (int j = 0; j < n; j++) {
+                arr[i][j] = str.charAt(j) - 48;
+            }
+        }
+
+        sb = new StringBuilder();
+
+        dfs(0, 0, n, arr, sb);
+        bw.write(sb.toString());
+        bw.close();
+        br.close();
+    }
+
+    static void dfs(int a, int b, int cnt, int[][] arr, StringBuilder sb) {
+        int v0 = 0;
+        int v1 = 0;
+        for (int i = a; i < a + cnt; i++) {
+            for (int k = b; k < b + cnt; k++) {
+                if (arr[i][k] == 0) v0++;
+                else v1++;
+            }
+        }
+        if (v0 > 0 && v1 > 0) {
+            sb.append("(");
+            int val = cnt % 2 == 0 ? cnt / 2 : cnt / 2 + 1;
+            dfs(a, b, val, arr, sb);
+            dfs(a, b + val, val, arr, sb);
+            dfs(a + val, b, val, arr, sb);
+            dfs(a + val, b + val, val, arr, sb);
+            sb.append(')');
+            return;
+        }
+        int n2 = v0 > v1 ? 0 : 1;
+        sb.append(n2);
+    }
+}
