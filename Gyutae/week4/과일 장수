@@ -1,0 +1,23 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/135808
+
+import java.util.*;
+
+class Solution {
+    public int solution(int k, int m, int[] score) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> b - a);
+        for (int n : score)
+            pq.add(n);
+
+        int answer = 0;
+        int cnt = score.length;
+        while (cnt >= m) {
+            int val = -1;
+            for (int i = 0; i < m; i++)
+                val = pq.poll();
+            answer += val * m;
+            cnt -= m;
+        }
+
+        return answer;
+    }
+}
