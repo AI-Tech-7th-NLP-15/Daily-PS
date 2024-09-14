@@ -7,7 +7,7 @@
 
 
 - 참고 사이트: [백준](https://www.acmicpc.net/), [프로그래머스](https://programmers.co.kr/)
-- 언어: 파이썬
+- 언어: 파이썬, JAVA 
 
 #### 문제 풀이
 
@@ -66,3 +66,5 @@
 | 2주차    | [완전 제곱수](https://www.acmicpc.net/problem/1977)      | [뒤집기](https://www.acmicpc.net/problem/1439)      | [쿼드 트리](https://www.acmicpc.net/problem/1992)         | [가장 긴 증가~](https://www.acmicpc.net/problem/11053) | [토마토](https://acmicpc.net/problem/7576)        |
 | 3주차    | [숫자 문자열과 영단어](https://school.programmers.co.kr/learn/courses/30/lessons/81301)     | [약수의 개수와 덧셈](https://school.programmers.co.kr/learn/courses/30/lessons/77884)      | [신규 아이디 추천](https://school.programmers.co.kr/learn/courses/30/lessons/72410)         | [성격 유형 검사하기](https://school.programmers.co.kr/learn/courses/30/lessons/118666) | [개인정보 수집 유효기간](https://school.programmers.co.kr/learn/courses/30/lessons/150370)    |
 | 4주차    | [과일 장수](https://school.programmers.co.kr/learn/courses/30/lessons/135808)     | [푸드 파이트 대회](https://school.programmers.co.kr/learn/courses/30/lessons/134240)      | [햄버거 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/133502)         | [신고 결과 받기](https://school.programmers.co.kr/learn/courses/30/lessons/92334) | [로또의 최고 순위와 최저 순위](https://school.programmers.co.kr/learn/courses/30/lessons/77484)    |
+| 5주차    | [음양 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/76501)     | [내적](https://school.programmers.co.kr/learn/courses/30/lessons/70128)      | [3진법 뒤집기](https://school.programmers.co.kr/learn/courses/30/lessons/68935)         | [두개 뽑아서 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/68644) | [키패드 누르기](https://school.programmers.co.kr/learn/courses/30/lessons/67256)    |
+| 6주차(HARD)   | [점찍기](https://school.programmers.co.kr/learn/courses/30/lessons/140107) | [귤고르기](https://school.programmers.co.kr/learn/courses/30/lessons/138476) | [숫자카드 나누기](https://school.programmers.co.kr/learn/courses/30/lessons/135807) | [유사 칸토어 비트열](https://school.programmers.co.kr/learn/courses/30/lessons/148652) | [부대복귀](https://school.programmers.co.kr/learn/courses/30/lessons/132266) |
