@@ -1,0 +1,82 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/92343
+
+import java.util.*;
+
+class Solution {
+    HashMap<Integer, List<Integer>> hash;
+    int[] visited;
+    int max = 1;
+    public int solution(int[] info, int[][] edges) {
+        visited = new int[info.length];
+        hash = new HashMap<>();
+
+        for (int[] edge : edges) {
+            if (!hash.keySet().contains(edge[0]))
+                hash.put(edge[0], hash.getOrDefault(edge[0], new ArrayList<Integer>()));
+            hash.get(edge[0]).add(edge[1]);
+        }
+
+        visited[0] = 1;
+        for (int edge : hash.get(0)){
+            // System.out.println("edge:" + edge);
+            if (info[edge] == 1) continue;
+            dfs(new int[]{1, 0}, edge, info, edges);
+            visited[edge] = 0;
+        }
+        return max;
+    }
+
+    void dfs(int[] cnt, int loc, int[] info, int[][] edges) {
+        if (visited[loc] == 0) {
+            if (info[loc] == 0) cnt[0]++;
+            else cnt[1]++;
+        }
+
+        // if (loc == 8) System.out.println("val is" + " " + cnt[0] + " " + cnt[1]);
+
+        if (cnt[1] >= cnt[0]) return;
+        visited[loc] = 1;
+
+        // if (cnt[0] > max) {
+        //     for (int i = 0; i < visited.length; i++)
+        //         if (visited[i] == 1) System.out.println(i);
+        //     System.out.println("------------");
+        // }
+        max = Math.max(max, cnt[0]);
+
+        for (int i = 0; i < visited.length; i++) {
+            if (visited[i] == 0) continue;
+            if (!hash.keySet().contains(i)) continue;
+            List<Integer> list = hash.get(i);
+            int val = 0;
+            for (int edge : list)
+                if (visited[edge] == 1)
+                    val++;
+            // if (i == 8) System.out.println("val is" + " " + val);
+            if (val != list.size()) {
+                for (int edge : list){
+                    if (visited[edge] == 0) {
+                        dfs(cnt, edge, info, edges);
+
+                        visited[edge] = 0;
+                        if (info[edge] == 0) cnt[0]--;
+                        else cnt[1]--;
+                    }
+                }
+            }
+        }
+        if (hash.keySet().contains(loc)) {
+            for (int edge : hash.get(loc)){
+                if (visited[edge] == 1) continue;
+                if (info[edge] == 1) {
+                    if (cnt[1] + 1 >= cnt[0]) continue;
+                }
+                dfs(cnt, edge, info, edges);
+
+                visited[edge] = 0;
+                if (info[edge] == 0) cnt[0]--;
+                else cnt[1]--;
+            }
+        }
+    }
+}
