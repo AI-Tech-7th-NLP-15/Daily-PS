@@ -1,5 +1,7 @@
 https://school.programmers.co.kr/learn/courses/30/lessons/92343
 
+# 양과 늑대 프로그래머스
+
 import java.util.*;
 
 class Solution {
